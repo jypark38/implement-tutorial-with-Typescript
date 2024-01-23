@@ -3,15 +3,20 @@ const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
 btn.addEventListener("click", () => {
-  let hcolor = "#";
-  for (let i = 0; i < 6; i++) {
-    const randomNumber = getRandomNumber();
-    hcolor += hex[randomNumber];
-  }
-  document.body.style.backgroundColor = hcolor;
-  color.textContent = hcolor;
+  const HEX = getRandomHex();
+
+  document.body.style.backgroundColor = HEX;
+  color.textContent = HEX;
 });
 
 const getRandomNumber = () => {
   return Math.floor(Math.random() * hex.length);
+};
+
+const getRandomHex = () => {
+  let hcolor = "#";
+  for (let i = 0; i < 6; i++) {
+    hcolor += hex[getRandomNumber()];
+  }
+  return hcolor;
 };
