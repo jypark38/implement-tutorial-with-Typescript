@@ -32,7 +32,43 @@ const reviews = [
 
 let current = 0;
 
-const name = document.getElementById("author");
+const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
-const img = document.getElementById("");
+const img = document.getElementById("person-img");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const randomBtn = document.querySelector(".random-btn");
+
+prevBtn.addEventListener("click", () => {
+  current--;
+  if (current < 0) current = reviews.length - 1;
+  showItem();
+});
+nextBtn.addEventListener("click", () => {
+  current++;
+  if (current >= reviews.length) current = 0;
+  showItem();
+});
+randomBtn.addEventListener("click", () => {
+  current = Math.floor(Math.random() * reviews.length);
+  showItem();
+});
+
+// document.body.addEventListener("click", (e) => {
+//   if (e.target.classList.contains("prev-btn") || e) {
+//     console.log("hi");
+//   }
+// });
+
+window.addEventListener("DOMContentLoaded", () => {
+  showItem();
+});
+
+function showItem() {
+  const review = reviews[current];
+  img.src = review.img;
+  author.textContent = review.name;
+  info.textContent = review.text;
+  job.textContent = review.job;
+}
