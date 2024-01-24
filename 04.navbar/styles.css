@@ -195,13 +195,14 @@ nav {
   color: var(--clr-primary-5);
   padding-left: 1.5rem;
 }
+/* 반응형 : 모바일 환경에서는 소셜 아이콘들 숨긴다. */
 .social-icons {
   display: none;
 }
 .links {
-  /* height: 0;
+  height: 0;
   overflow: hidden;
-  transition: var(--transition); */
+  transition: var(--transition);
 }
 .show-links {
   height: 10rem;
@@ -222,6 +223,7 @@ nav {
     display: none;
   }
   .links {
+    /* 필수임 */
     height: auto;
     display: flex;
   }
