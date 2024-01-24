@@ -36,12 +36,13 @@ const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 const img = document.getElementById("person-img");
+const article = document.querySelector(".review");
 
 window.addEventListener("DOMContentLoaded", () => {
   showItem();
 });
 
-document.querySelector(".review").addEventListener("click", (e) => {
+article.addEventListener("click", (e) => {
   const classLists = e.target.classList;
   const reviewNum = reviews.length;
   if (classLists.contains("prev-btn") || classLists.contains("fa-chevron-left")) {
@@ -63,3 +64,18 @@ function showItem() {
   info.textContent = review.text;
   job.textContent = review.job;
 }
+
+// 사전로딩
+// article.addEventListener("mouseOver", (e) => {
+//   const classLists = e.target.classList;
+//   const reviewNum = reviews.length;
+//   if (classLists.contains("prev-btn") || classLists.contains("fa-chevron-left")) {
+//     current = (current + reviewNum - 1) % reviewNum;
+//   }
+//   if (classLists.contains("next-btn") || classLists.contains("fa-chevron-right")) {
+//     current = (current + 1) % reviewNum;
+//   }
+
+//   const Img = new Image();
+//   Img.src = reviews[current].img;
+// });
