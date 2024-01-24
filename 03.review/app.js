@@ -36,32 +36,23 @@ const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 const img = document.getElementById("person-img");
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-const randomBtn = document.querySelector(".random-btn");
-
-prevBtn.addEventListener("click", () => {
-  current--;
-  if (current < 0) current = reviews.length - 1;
-  showItem();
-});
-nextBtn.addEventListener("click", () => {
-  current++;
-  if (current >= reviews.length) current = 0;
-  showItem();
-});
-randomBtn.addEventListener("click", () => {
-  current = Math.floor(Math.random() * reviews.length);
-  showItem();
-});
-
-// document.body.addEventListener("click", (e) => {
-//   if (e.target.classList.contains("prev-btn") || e) {
-//     console.log("hi");
-//   }
-// });
 
 window.addEventListener("DOMContentLoaded", () => {
+  showItem();
+});
+
+document.querySelector(".review").addEventListener("click", (e) => {
+  const classLists = e.target.classList;
+  const reviewNum = reviews.length;
+  if (classLists.contains("prev-btn") || classLists.contains("fa-chevron-left")) {
+    current = (current + reviewNum - 1) % reviewNum;
+  }
+  if (classLists.contains("next-btn") || classLists.contains("fa-chevron-right")) {
+    current = (current + 1) % reviewNum;
+  }
+  if (classLists.contains("random-btn")) {
+    current = Math.floor(Math.random() * reviews.length);
+  }
   showItem();
 });
 
