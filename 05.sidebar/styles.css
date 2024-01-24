@@ -247,9 +247,11 @@ Sidebar
   row-gap: 1rem;
   box-shadow: var(--clr-red-dark);
   transition: var(--transition);
+  /* 숨기기 */
   transform: translate(-100%);
 }
 .show-sidebar {
+  /* 보이기 */
   transform: translate(0);
 }
 @media screen and (min-width: 676px) {
