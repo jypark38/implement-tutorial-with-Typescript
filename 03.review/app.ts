@@ -1,5 +1,13 @@
+interface userInfo {
+  id: number;
+  name: string;
+  job: string;
+  img: string;
+  text: string;
+}
+
 // local reviews data
-const reviews = [
+const reviews: userInfo[] = [
   {
     id: 1,
     name: "susan smith",
@@ -29,17 +37,21 @@ const reviews = [
     text: "Edison bulb put a bird on it humblebrag, marfa pok pok heirloom fashion axe cray stumptown venmo actually seitan. VHS farm-to-table schlitz, edison bulb pop-up 3 wolf moon tote bag street art shabby chic. ",
   },
 ];
+
 let current = 0;
+
 const author = document.getElementById("author");
 const job = document.getElementById("job");
 const info = document.getElementById("info");
 const img = document.getElementById("person-img");
 const article = document.querySelector(".review");
+
 window.addEventListener("DOMContentLoaded", () => {
   showItem();
 });
-article.addEventListener("click", (e) => {
-  const classLists = e.target.classList;
+
+article.addEventListener("click", (e: MouseEvent) => {
+  const classLists = (e.target as HTMLElement).classList;
   const reviewNum = reviews.length;
   if (classLists.contains("prev-btn") || classLists.contains("fa-chevron-left")) {
     current = (current + reviewNum - 1) % reviewNum;
@@ -52,14 +64,15 @@ article.addEventListener("click", (e) => {
   }
   showItem();
 });
+
 function showItem() {
   const review = reviews[current];
-  img.src = review.img;
+  (img as HTMLImageElement).src = review.img;
   author.textContent = review.name;
   info.textContent = review.text;
   job.textContent = review.job;
 }
-export {};
+
 // 사전로딩
 // article.addEventListener("mouseOver", (e) => {
 //   const classLists = e.target.classList;
@@ -70,6 +83,7 @@ export {};
 //   if (classLists.contains("next-btn") || classLists.contains("fa-chevron-right")) {
 //     current = (current + 1) % reviewNum;
 //   }
+
 //   const Img = new Image();
 //   Img.src = reviews[current].img;
 // });
