@@ -231,7 +231,8 @@ Questions
   margin-bottom: 0;
 }
 /* hide text */
-/* .question-text {
+/* show-text 클래스로 조정 */
+.question-text {
   display: none;
 }
 .show-text .question-text {
@@ -245,4 +246,4 @@ Questions
 }
 .show-text .plus-icon {
   display: none;
-} */
+}
