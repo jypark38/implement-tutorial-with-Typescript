@@ -3,7 +3,7 @@ const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
 btn.addEventListener("click", () => {
-  const HEX: string = getRandomHex();
+  const HEX = getRandomHex();
 
   document.body.style.backgroundColor = HEX;
   color.textContent = HEX;
