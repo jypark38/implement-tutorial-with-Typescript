@@ -98,8 +98,9 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 function displayMenuItems(menuItems: menu[]) {
-  let displayMenu: string[] | string = menuItems.map((item: menu) => {
-    return `
+  const displayMenu: string = menuItems
+    .map((item: menu) => {
+      return `
             <article class="menu-item">
               <img src=${item.img} class="photo" alt="menu item" />
               <div class="item-info">
@@ -113,9 +114,9 @@ function displayMenuItems(menuItems: menu[]) {
               </div>
             </article>
           `;
-  });
+    })
+    .join("");
 
-  displayMenu = displayMenu.join("");
   sectionCenter.innerHTML = displayMenu;
 }
 

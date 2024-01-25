@@ -86,7 +86,8 @@ window.addEventListener("DOMContentLoaded", () => {
     displayCategoryBtns(menu);
 });
 function displayMenuItems(menuItems) {
-    let displayMenu = menuItems.map((item) => {
+    const displayMenu = menuItems
+        .map((item) => {
         return `
             <article class="menu-item">
               <img src=${item.img} class="photo" alt="menu item" />
@@ -101,8 +102,8 @@ function displayMenuItems(menuItems) {
               </div>
             </article>
           `;
-    });
-    displayMenu = displayMenu.join("");
+    })
+        .join("");
     sectionCenter.innerHTML = displayMenu;
 }
 function displayCategoryBtns(menu) {
