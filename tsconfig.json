@@ -1,0 +1,49 @@
+{
+  /*
+  target
+  컴파일 결과 생성되는 자바스크립트의 버전을 설정한다
+  ES5로 설정하면 ES5의 문법으로 코드가 변환된다
+  ESNext 로 설정하면 최신 자바스크립트 버전으로 된다. 
+  */
+  /*
+  module
+  모듈시스템을 설정한다
+  commonJS 로 설정하면 CommonJS 문법으로 코드가 변환된다
+  ESNext 면 자바스크립트 코드가 ES 모듈시스템을 사용한다.
+  */
+  /*
+  outDir
+  컴파일 결과 생성할 자바스크립트 코드의 위치를 결정하는 옵션
+  */
+  /*
+  strcit : 엄격모드 설정 여부
+  */
+  /*
+  moduleDectection
+  타입스크립트의 모든 파일은 기본적으로 전역 파일로 취급된다.
+  그래서 두 타입스크립트 파일은 변수를 공유한다ts
+  동일한 이름의 변수를 선언하면 오류가 발생해서, 각 파일에 모듈 시스템 키워드를 최소 하나 이상 사용해서
+  해당 파일을 전역 모듈이 아닌 로컬 모듈로 취급되도록 만들어야 한다
+  이를 위해 force로 설정하면 모든 ts파일이 로컬 모듈로 취급된다
+  */
+  "compilerOptions": {
+    // "target": "ES5"
+    "target": "ESNext",
+    "module": "ESNext",
+    // "outDir": "dist",
+    // "strict": true,
+    "moduleDetection": "force",
+    "moduleResolution": "NodeNext"
+  },
+  // include
+  // tsc에게 컴파일할 타입스크립트 파일의 범위와 위치를 알려준다
+  // "include": "*",
+  // 터미널에 tsc를 입력하면 src 폴더 안에 있는 ts파일이 컴파일된다
+
+  // ts-node
+  // moduleDectection을 활성화하고 ts 파일에서 모듈 시스템을 사용하면 ts-node로 실행시 오류가 생긴다.
+  // ts-node의 옵션을 설정하면 ts-node로 타입스크립트 모듈을 실행할 수 있다.
+  "ts-node": {
+    "esm": true
+  }
+}
