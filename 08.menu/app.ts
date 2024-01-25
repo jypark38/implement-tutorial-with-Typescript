@@ -90,7 +90,7 @@ const menu: menu[] = [
   },
 ];
 
-const sectionCenter = document.querySelector(".section-center");
+const sectionCenter: HTMLDivElement = document.querySelector(".section-center");
 
 window.addEventListener("DOMContentLoaded", () => {
   displayMenuItems(menu);
@@ -136,7 +136,7 @@ function displayCategoryBtns(menu: menu[]) {
     })
     .join("");
 
-  document.querySelector(".btn-container").innerHTML = categoryBtns;
+  (document.querySelector(".btn-container") as HTMLDivElement).innerHTML = categoryBtns;
 
   const filterButtons: NodeListOf<HTMLButtonElement> = document.querySelectorAll(".filter-btn");
   filterButtons.forEach((btn) => {
