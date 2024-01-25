@@ -14,11 +14,11 @@ closeBtn.addEventListener("click", () => {
   modalOverlay.classList.remove("open-modal");
 });
 
+// ! 추가기능
+// 배경 클릭시 모달 닫기
 modalOverlay.addEventListener("click", () => {
   modalOverlay.classList.remove("open-modal");
 });
-
-// ! 추가기능
 // 닫기 버튼에서 포커스 벗어나는 것 방지
 closeBtn.addEventListener("keydown", (e: KeyboardEvent) => {
   if (e.key === "Tab") {
