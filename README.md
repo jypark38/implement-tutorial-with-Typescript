@@ -22,3 +22,14 @@ TypeScript
 
   - The load event is fired when the whole page has loaded, including all dependent resources such as stylesheets and images.
     - HTML로 DOM 트리를 만드는 게 완성되었을 뿐만 아니라 이미지, 스타일시트 같은 외부 자원도 모두 불러오는 것이 끝났을 때 발생합니다.
+
+- pageYOffSet
+
+  - 현재 문서가 수직방향으로 스크롤된 픽셀 수
+
+- Element.getBoundingClientRect
+
+  - Element의 크기와 뷰포트에 상대적인 위치를 제공하는 DOMRect 객체를 반환한다.
+
+- offsetTop
+  - 요소의 top 을 나타내는 숫자를 반환
