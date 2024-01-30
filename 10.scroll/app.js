@@ -21,18 +21,8 @@ const topLink = document.querySelector(".top-link");
 window.addEventListener("scroll", () => {
     const scrollHeight = window.pageYOffset;
     const navHeight = navbar.getBoundingClientRect().height;
-    if (scrollHeight > navHeight) {
-        navbar.classList.add("fixed-nav");
-    }
-    else {
-        navbar.classList.remove("fixed-nav");
-    }
-    if (scrollHeight > 500) {
-        topLink.classList.add("show-link");
-    }
-    else {
-        topLink.classList.remove("show-link");
-    }
+    scrollHeight > navHeight ? navbar.classList.add("fixed-nav") : navbar.classList.remove("fixed-nav");
+    scrollHeight > 500 ? topLink.classList.add("show-link") : topLink.classList.remove("show-link");
 });
 // ********** smooth scroll ************
 // select links
@@ -50,11 +40,11 @@ scrollLinks.forEach((link) => {
         // fixedNav가 없는 경우 scroll을 덜 해야한다.
         //  -> 스크롤이 내려가면 navbar 만큼의 높이가 문서에서 사라진다.
         if (!fixedNav) {
-            position = position - navHeight;
+            position -= navHeight;
         }
         // navigation이 열려있을때, 이 높이만큼 더 스크롤을 해줘야한다.
         if (navHeight > 82) {
-            position = position + containerHeight;
+            position += containerHeight;
         }
         window.scrollTo({
             left: 0,
