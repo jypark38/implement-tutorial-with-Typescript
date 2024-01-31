@@ -14,4 +14,26 @@ I just told you! You've killed me! Fry! Quit doing the right thing, you jerk! Mi
 const form = document.querySelector(".lorem-form");
 const amount = document.getElementById("amount");
 const result = document.querySelector(".lorem-text");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const value = parseInt(amount.value);
+    let resultText;
+    if (!value) {
+        result.innerHTML = `<p class="result" style='color:red'}}>required input</p>`;
+        return;
+    }
+    if (value < 0 || value > text.length) {
+        const random = Math.floor(Math.random() * text.length);
+        resultText = `<p class="result">${text[random]}</p>`;
+    }
+    else {
+        resultText = text
+            .slice(0, value)
+            .map((item) => {
+            return `<p class="result">${item}</p>`;
+        })
+            .join("");
+    }
+    result.innerHTML = `<p class="result">${resultText}</p>`;
+});
 export {};
