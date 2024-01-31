@@ -15,6 +15,7 @@ let editId = "";
 form.addEventListener("submit", addItem);
 clearBtn.addEventListener("click", clearItems);
 window.addEventListener("DOMContentLoaded", setupItems);
+
 // ****** FUNCTIONS **********
 function addItem(event: SubmitEvent) {
   event.preventDefault();
@@ -91,7 +92,6 @@ function setBackToDefault() {
   editId = "";
   submitBtn.textContent = "submit";
 }
-
 // ****** LOCAL STORAGE **********
 
 interface grocery {
