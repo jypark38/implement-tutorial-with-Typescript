@@ -20,14 +20,11 @@ form.addEventListener("submit", (e: SubmitEvent) => {
   e.preventDefault();
 
   const value = parseInt(amount.value);
+
   let resultText: string;
-
-  if (!value) {
-    result.innerHTML = `<p class="result" style='color:red'}}>required input</p>`;
-    return;
-  }
-
-  if (value < 0 || value > text.length) {
+  if (isNaN(value)) {
+    resultText = `<p class="result" style='color:red'}}>required input</p>`;
+  } else if (value < 0 || value > text.length) {
     const random = Math.floor(Math.random() * text.length);
     resultText = `<p class="result">${text[random]}</p>`;
   } else {
