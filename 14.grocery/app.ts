@@ -60,7 +60,7 @@ function clearItems() {
   container.classList.remove("show-container");
   displayAlert("empty list", "danger");
   setBackToDefault();
-  localStorage.removeImte("list");
+  localStorage.removeItem("list");
 }
 
 function deleteItem(event: MouseEvent) {
@@ -72,7 +72,6 @@ function deleteItem(event: MouseEvent) {
   }
   displayAlert("item removed", "danger");
   setBackToDefault();
-
   removeFromLocalStorage(id);
 }
 
