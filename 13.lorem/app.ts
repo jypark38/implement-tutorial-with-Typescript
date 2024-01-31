@@ -26,7 +26,7 @@ form.addEventListener("submit", (e: SubmitEvent) => {
     resultText = `<p class="result" style='color:red'}}>required input</p>`;
   } else if (value < 0 || value > text.length) {
     const random = Math.floor(Math.random() * text.length);
-    resultText = `<p class="result">${text[random]}</p>`;
+    resultText = `<p class="result" style='color:red'}}>random</p><p class="result">${text[random]}</p>`;
   } else {
     resultText = text
       .slice(0, value)

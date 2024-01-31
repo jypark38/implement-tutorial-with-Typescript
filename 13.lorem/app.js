@@ -23,7 +23,7 @@ form.addEventListener("submit", (e) => {
     }
     else if (value < 0 || value > text.length) {
         const random = Math.floor(Math.random() * text.length);
-        resultText = `<p class="result">${text[random]}</p>`;
+        resultText = `<p class="result" style='color:red'}}>random</p><p class="result">${text[random]}</p>`;
     }
     else {
         resultText = text
